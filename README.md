@@ -12,7 +12,7 @@ Have you ever been sitting at your desk, heard an aircraft roaring overhead, and
 
 ---
 
-## 🚀 Download & Quick Start
+## Download & Quick Start
 
 1. Head over to the **[Releases](https://github.com/fareskk/AeroAlert/releases)** page.
 2. Under **Assets**, download the latest `.exe` file.
@@ -22,22 +22,22 @@ Have you ever been sitting at your desk, heard an aircraft roaring overhead, and
 
 ---
 
-## ✨ Features
+## Features
 
-- 📍 **Interactive Radar Perimeter**: Pick your house (or any spot on Earth) using OpenStreetMap / Leaflet and adjust your detection radius with a live circle preview.
-- 🔔 **Native Windows Alerts**: Subtle desktop notifications showing the airline, callsign, altitude, and distance. Clicking the notification takes you directly to the live flight on Flightradar24.
+-  **Interactive Radar Perimeter**: Pick your house (or any spot on Earth) using OpenStreetMap / Leaflet and adjust your detection radius with a live circle preview.
+-  **Native Windows Alerts**: Subtle desktop notifications showing the airline, callsign, altitude, and distance. Clicking the notification takes you directly to the live flight on Flightradar24.
   <p align="center">
   <img width="300" alt="Windows Toast Notification" src="https://github.com/user-attachments/assets/e0e771d4-74e6-40a9-8dd2-8a8bde7c34ee" />
   </p>
-- 🔊 **In-Cabin Chime Alert**: Plays an airline cabin chime (the classic *ding-dong* cabin crew announcement chime) whenever a flight enters your airspace, complete with a one-click mute toggle for quiet focus hours.
-- 🕒 **First-Seen Timestamps**: See the exact minute an aircraft entered your perimeter directly in the app list.
-- ⚡ **Zero Setup & Free APIs**: Powered by community ADS-B networks (`adsb.lol` with fallback to `airplanes.live`). No API keys, no subscriptions, and no tracking accounts required.
-- 💼 **100% Portable**: No installer wizard cluttering your system. Just download the `.exe` and run.
+-  **In-Cabin Chime Alert**: Plays an airline cabin chime (the classic *ding-dong* cabin crew announcement chime) whenever a flight enters your airspace, complete with a one-click mute toggle for quiet focus hours.
+-  **First-Seen Timestamps**: See the exact minute an aircraft entered your perimeter directly in the app list.
+-  **Zero Setup & Free APIs**: Powered by community ADS-B networks (`adsb.lol` with fallback to `airplanes.live`). No API keys, no subscriptions, and no tracking accounts required.
+-  **100% Portable**: No installer wizard cluttering your system. Just download the `.exe` and run.
 
 
 ---
 
-## 🛠️ Built With
+##  Built With
 
 - **[Electron](https://www.electronjs.org/)** — Desktop container & native OS integrations
 - **[Leaflet.js](https://leafletjs.com/)** & **OpenStreetMap** — Map UI & radius visualization
@@ -47,6 +47,6 @@ Have you ever been sitting at your desk, heard an aircraft roaring overhead, and
 
 ---
 
-## ☕ Disclaimer
+##  Disclaimer
 
 This is an informal, hobby side-project made for aviation enthusiasts and curious minds. All airspace data relies on crowd-sourced community ADS-B feeders.
