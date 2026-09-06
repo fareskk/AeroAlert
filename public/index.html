@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AeroAlert</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <header class="app-header">
+      <div class="header-main">
+        <div>
+          <h1>AeroAlert</h1>
+          <p id="status-text">Waiting for location setup...</p>
+        </div>
+        <button id="toggle-settings-btn" class="icon-btn" title="Configure Location">⚙️</button>
+      </div>
+
+      <div id="settings-panel" class="settings-drawer hidden">
+        <form id="config-form">
+          <div class="presets-row">
+            <button type="button" id="auto-location-btn" class="quick-btn">Use My Location</button>
+            <select id="quick-presets" class="preset-select">
+              <option value="" disabled selected>Or choose a preset...</option>
+              <option value="38.748,-9.155">Lisbon (Campo Grande)</option>
+              <option value="38.895,-9.040">Alverca (Tagus Axis)</option>
+              <option value="38.680,-9.155">Almada / South Bank</option>
+              <option value="41.242,-8.678">Porto (Sá Carneiro Airport)</option>
+              <option value="37.017,-7.969">Faro Airport</option>
+            </select>
+          </div>
+
+          <div class="manual-coords">
+            <div class="field">
+              <label for="lat">Latitude</label>
+              <input type="number" step="any" id="lat" required placeholder="38.748">
+            </div>
+            <div class="field">
+              <label for="lon">Longitude</label>
+              <input type="number" step="any" id="lon" required placeholder="-9.155">
+            </div>
+            <div class="field">
+              <label for="dist">Radius (km)</label>
+              <input type="number" step="any" id="dist" required placeholder="5">
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" id="cancel-btn" class="btn-secondary">Cancel</button>
+            <button type="submit" id="save-btn" class="btn-primary">Apply & Monitor</button>
+          </div>
+        </form>
+      </div>
+    </header>
+
+    <main class="app-content">
+      <div class="list-header">
+        <h2>Recently Detected Flights</h2>
+        <span id="flight-count" class="count-badge">0</span>
+      </div>
+
+      <div id="flights-scroll-area" class="scroll-container">
+        <div id="flights-container">
+          <div class="empty-state">No flights detected nearby yet.</div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: #0f1115;
+  color: #f0f2f5;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  background-color: #161920;
+  border-bottom: 1px solid #232733;
+  padding: 16px 20px;
+  flex-shrink: 0;
+}
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+#status-text {
+  font-size: 12px;
+  color: #00d26a;
+  margin-top: 2px;
+}
+
+.icon-btn {
+  background: #222734;
+  border: 1px solid #303746;
+  color: #fff;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.icon-btn:hover {
+  background: #2c3344;
+}
+
+.settings-drawer {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #232733;
+  transition: all 0.25s ease;
+}
+
+.settings-drawer.hidden {
+  display: none;
+}
+
+.presets-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.quick-btn {
+  background: #238636;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.quick-btn:hover {
+  background: #2ea043;
+}
+
+.preset-select {
+  flex: 1;
+  background: #1c212c;
+  border: 1px solid #303746;
+  color: #f0f2f5;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+.manual-coords {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.manual-coords .field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.manual-coords label {
+  font-size: 11px;
+  color: #8b949e;
+  text-transform: uppercase;
+}
+
+.manual-coords input {
+  background: #1c212c;
+  border: 1px solid #303746;
+  color: #f0f2f5;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.manual-coords input:focus, .preset-select:focus {
+  outline: none;
+  border-color: #58a6ff;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-primary {
+  background: #1f6feb;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #388bfd;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #8b949e;
+  border: 1px solid #303746;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #1c212c;
+  color: #f0f2f5;
+}
+
+.app-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 20px;
+  min-height: 0; 
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 12px;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.count-badge {
+  background: #232733;
+  color: #8b949e;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.scroll-container {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.scroll-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #282e3d;
+  border-radius: 3px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #3e475d;
+}
+
+#flights-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.flight-card {
+  background: #161920;
+  border: 1px solid #232733;
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flight-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.airline-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  object-fit: contain;
+  background: #1f232d;
+  padding: 4px;
+}
+
+.flight-meta strong {
+  font-size: 14px;
+  display: block;
+}
+
+.flight-meta span {
+  font-size: 12px;
+  color: #8b949e;
+}
+
+.radar-btn {
+  background: #238636;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.radar-btn:hover {
+  background: #2ea043;
+}
+
+.empty-state {
+  color: #6e7681;
+  font-size: 13px;
+  padding: 30px 0;
+  text-align: center;
+}
