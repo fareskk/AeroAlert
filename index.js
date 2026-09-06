@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
+import open from 'open';
+import { exec } from 'child_process';
 
 dotenv.config();
 
@@ -111,6 +113,7 @@ async function checkAirspace() {
       const lon = flight[5];
       const lat = flight[6];
       const baroAltitude = flight[7];
+      
 
       if (lat == null || lon == null) continue;
 
@@ -132,15 +135,33 @@ async function checkAirspace() {
         console.log(`\n [AeroAlert] ${callsign || icao24} (${airlineName})`);
         console.log(`${routeText} | Distância: ${distKm} km | Altitude: ${altKm} km`);
 
-        notifier.notify({
-          title: ` ${airlineName} (${callsign || 'Sem indicativo'})`,
-          message: `${routeText}\nDistância: ${distKm} km | Altitude: ${altKm} km`,
-          icon: imagePath,
-          appID: 'AeroAlert',
-          'app-icon': APP_LOGO,
-          sound: true,
-          wait: false
-        });
+        const trackingUrl = callsign 
+          ? `https://www.flightradar24.com/${callsign}` 
+          : `https://www.google.com/maps?q=${lat},${lon}`;
+
+        const toaster = new notifier.WindowsToaster();
+
+        toaster.notify(
+          {
+            title: `${airlineName} (${callsign || 'Sem indicativo'})`,
+            message: `${routeText}\nDistância: ${distKm} km | Altitude: ${altKm} km`,
+            icon: imagePath,
+            appID: 'AeroAlert',
+            sound: true,
+            wait: true,
+            extra: ['-action', trackingUrl]
+          },
+          (err, response) => {
+            const res = (response || '').toString().toLowerCase();
+
+            if (res.includes('activate') || res.includes('clicked') || !res.includes('timeout')) {
+              if (!res.includes('dismissed')) {
+                console.log('[AeroAlert] Notificação clicada. A abrir radar...');
+                exec(`start "" "${trackingUrl}"`);
+              }
+            }
+          }
+        );
       }
     }
   } catch (error) {
