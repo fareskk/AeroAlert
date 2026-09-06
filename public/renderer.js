@@ -145,9 +145,19 @@ async function searchLocation() {
 
   searchAddressBtn.textContent = 'Searching...';
   searchAddressBtn.disabled = true;
+  addressInput.disabled = true; // Previne submissões concorrentes
 
   try {
-    const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}`);
+    const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=1`, {
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}`);
+    }
+
     const data = await res.json();
 
     if (data && data.length > 0) {
@@ -156,15 +166,22 @@ async function searchLocation() {
       addressInput.value = parts.slice(0, 3).join(', ');
 
       updateLocation(lat, lon, false);
-      map.setView([lat, lon], 12);
+      if (map) map.setView([lat, lon], 12);
     } else {
-      alert('Location not found. Try a broader city or postal name.');
+      addressInput.value = '';
+      addressInput.placeholder = 'Location not found! Try city name...';
     }
   } catch (err) {
-    alert('Failed to contact search service.');
+    console.error('Search error:', err);
+    addressInput.placeholder = 'Search error. Try again...';
   } finally {
     searchAddressBtn.textContent = 'Search';
     searchAddressBtn.disabled = false;
+    addressInput.disabled = false;
+
+    setTimeout(() => {
+      addressInput.focus();
+    }, 50);
   }
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "aeroalert",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Real-time overhead aircraft tracker and desktop notification system",
   "author": "Duarte Soares",
   "main": "main.js",

@@ -243,7 +243,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 620,
     height: 720,
-    icon: appIcon || iconFile,
+    icon: path.join(__dirname, 'assets', 'icon.ico'),
     autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.cjs'),
@@ -287,6 +287,7 @@ app.whenReady().then(() => {
     } catch {}
   }
 
+  app.setAppUserModelId('com.aeroalert.app');
   loadStoredConfig();
   createWindow();
 
