@@ -36,3 +36,4 @@ Have you ever been sitting at your desk, heard an aircraft roaring overhead, and
 - **[adsbdb.com](https://adsbdb.com/)** — Flight route resolution & airline metadata
 
 ---
+> **Note for Windows users**: Because AeroAlert is an open-source hobby project without an expensive Code Signing certificate, Windows SmartScreen may show a warning on first launch. Simply click **"More info"** -> **"Run anyway"**.
