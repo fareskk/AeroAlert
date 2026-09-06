@@ -29,6 +29,7 @@ Have you ever been sitting at your desk, heard an aircraft roaring overhead, and
   <p align="center">
   <img width="300" alt="Windows Toast Notification" src="https://github.com/user-attachments/assets/e0e771d4-74e6-40a9-8dd2-8a8bde7c34ee" />
   </p>
+  
 -  **In-Cabin Chime Alert**: Plays an airline cabin chime (the classic *ding-dong* cabin crew announcement chime) whenever a flight enters your airspace, complete with a one-click mute toggle for quiet focus hours.
 -  **First-Seen Timestamps**: See the exact minute an aircraft entered your perimeter directly in the app list.
 -  **Zero Setup & Free APIs**: Powered by community ADS-B networks (`adsb.lol` with fallback to `airplanes.live`). No API keys, no subscriptions, and no tracking accounts required.
