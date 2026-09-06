@@ -25,6 +25,13 @@ Have you ever been sitting at your desk, heard an aircraft roaring overhead, and
 2. Under **Assets**, download the `.exe` file.
 3. Launch it, choose your location on the map, set your alert radius (e.g. 5 km), and click **Apply & Monitor**.
 
+
+
+<img width="593" height="675" alt="image" src="https://github.com/user-attachments/assets/f9129040-318f-4241-bf99-10d8aa3cc55e" />
+
+
+<img width="364" height="129" alt="Captura de ecrã 2026-09-06 232323" src="https://github.com/user-attachments/assets/e0e771d4-74e6-40a9-8dd2-8a8bde7c34ee" />
+
 ---
 
 ## 🛠️ Built With
