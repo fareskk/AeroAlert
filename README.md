@@ -21,7 +21,7 @@ Have you ever been sitting at your desk, heard an aircraft roaring overhead, and
 
 ## 🚀 Download & Quick Start
 
-1. Head over to the **[Releases](https://github.com/<your-username>/<your-repo>/releases)** page.
+1. Head over to the **[Releases](https://github.com/fareskk/AeroAlert/releases)** page.
 2. Under **Assets**, download the `.exe` file.
 3. Launch it, choose your location on the map, set your alert radius (e.g. 5 km), and click **Apply & Monitor**.
 
