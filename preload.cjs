@@ -5,5 +5,5 @@ contextBridge.exposeInMainWorld('electronAPI', {
   openRadar: (url) => ipcRenderer.send('open-radar', url),
   getConfig: () => ipcRenderer.invoke('get-config'),
   saveConfig: (config) => ipcRenderer.send('save-config', config),
-  getCurrentLocation: () => ipcRenderer.invoke('get-current-location')
+  toggleNotifications: (enabled) => ipcRenderer.send('toggle-notifications', enabled)
 });

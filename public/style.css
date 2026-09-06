@@ -288,3 +288,54 @@ h2 {
   padding: 30px 0;
   text-align: center;
 }
+
+.search-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.search-row input {
+  flex: 1;
+  background: #1c212c;
+  border: 1px solid #303746;
+  color: #f0f2f5;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.search-row input:focus {
+  outline: none;
+  border-color: #58a6ff;
+}
+
+#map-container {
+  height: 180px;
+  border-radius: 6px;
+  border: 1px solid #303746;
+  margin-bottom: 14px;
+  z-index: 1;
+}
+
+.leaflet-tile {
+  filter: brightness(0.7) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+}
+
+.leaflet-container {
+  background: #161920;
+}
+
+.flight-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flight-timestamp {
+  font-size: 0.75rem;
+  color: #8b949e;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+}

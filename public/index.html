@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>AeroAlert</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,24 +12,22 @@
       <div class="header-main">
         <div>
           <h1>AeroAlert</h1>
-          <p id="status-text">Waiting for location setup...</p>
+          <p id="status-text">No location configured. Open settings to begin.</p>
         </div>
-        <button id="toggle-settings-btn" class="icon-btn" title="Configure Location">⚙️</button>
+        <div class="header-actions">
+          <button id="toggle-sound-btn" class="icon-btn" title="Toggle Notifications">🔔</button>
+          <button id="toggle-settings-btn" class="icon-btn" title="Configure Location">⚙️</button>
+        </div>
       </div>
 
       <div id="settings-panel" class="settings-drawer hidden">
         <form id="config-form">
-          <div class="presets-row">
-            <button type="button" id="auto-location-btn" class="quick-btn">Use My Location</button>
-            <select id="quick-presets" class="preset-select">
-              <option value="" disabled selected>Or choose a preset...</option>
-              <option value="38.748,-9.155">Lisbon (Campo Grande)</option>
-              <option value="38.895,-9.040">Alverca (Tagus Axis)</option>
-              <option value="38.680,-9.155">Almada / South Bank</option>
-              <option value="41.242,-8.678">Porto (Sá Carneiro Airport)</option>
-              <option value="37.017,-7.969">Faro Airport</option>
-            </select>
+          <div class="search-row">
+            <input type="text" id="address-input" placeholder="Enter city or address (e.g. Lisbon, Porto)..." />
+            <button type="button" id="search-address-btn" class="quick-btn">Search</button>
           </div>
+
+          <div id="map-container"></div>
 
           <div class="manual-coords">
             <div class="field">
@@ -46,7 +45,7 @@
           </div>
 
           <div class="form-actions">
-            <button type="button" id="cancel-btn" class="btn-secondary">Cancel</button>
+            <button type="button" id="cancel-btn" class="btn-secondary">Close</button>
             <button type="submit" id="save-btn" class="btn-primary">Apply & Monitor</button>
           </div>
         </form>
@@ -67,6 +66,7 @@
     </main>
   </div>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="renderer.js"></script>
 </body>
 </html>
